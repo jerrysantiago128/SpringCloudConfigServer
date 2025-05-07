@@ -1,0 +1,17 @@
+package com.example.demo.controller;
+
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.web.bind.annotation.*;
+
+@RestController
+@RequestMapping("/api")
+public class HelloController {
+
+  @Value("${app.message}")
+  private String message;
+
+  @GetMapping("/hello")
+  public String hello() {
+    return message;
+  }
+}

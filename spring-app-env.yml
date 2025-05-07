@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  springboot-app:
+    container_name: springboot-demo-env
+    image: springboot-docker-app:env-config
+    ports:
+      - "8080:8080"
+    environment:
+      - MESSAGE=${MESSAGE}
+      - ENVIRONMENT=${ENVIRONMENT}
+      - NAME=${NAME}
+      - ROLE=${ROLE}
+    restart: always

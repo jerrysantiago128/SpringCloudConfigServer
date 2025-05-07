@@ -1,0 +1,10 @@
+version: '3.8'
+
+services:
+  springboot-app:
+    container_name: springboot-demo-cloud
+    image: springboot-docker-app:cloud-config
+    ports:
+      - "8080:8080"
+      - SPRING_CONFIG_LOCATION=classpath:/application.yml,classpath:/application.properties
+    restart: always
