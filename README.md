@@ -3,17 +3,35 @@ Simple implementation of an external configuration server for SpringBoot applica
 
 
 ## Configure your system
-sudo yum remove docker docker-client docker-client-latest docker-common docker-latest docker-latest-logrotate docker-logrotate docker-engine podman runc
 
-sudo yum install -y yum-utils
-sudo yum-config-manager --add-repo https://download.docker.com/linux/rhel/docker-ce.repo
+### Install Docker
 
-sudo yum install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin -y
+#### Remove old Docker and/or Podman installations
 
-sudo systemctl enable --now docker
+`sudo yum remove docker docker-client docker-client-latest docker-common docker-latest docker-latest-logrotate docker-logrotate docker-engine podman runc`
 
-sudo yum install -y maven java-11-openjdk \
-    java-11-openjdk-devel docker
+#### Grab the Docker '.repo' file
+
+`sudo yum install -y yum-utils`
+`sudo yum-config-manager --add-repo https://download.docker.com/linux/rhel/docker-ce.repo`
+
+#### Install Docker from Yum
+`sudo yum install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin -y`
+
+#### Enable and Start Docker
+`sudo systemctl enable --now docker`
+`sudo systemctl start docker.service`
+
+#### Verify
+Verify the installation works with `docker ps`
+
+**Note:** You may need to restart your system
+
+### Install Maven and Java 17
+sudo yum install -y maven java-17-openjdk java-17-openjdk-devel 
+
+Verify installation and add java to your ~/.bashrc file if needed
+
 
 ## Build
 
