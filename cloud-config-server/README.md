@@ -40,6 +40,15 @@ ex: `docker run -p 8888:8888 cloud-config-server:0.0.1`
 
 ### 3. Run with Docker Compose
 
+#### 3.1 Create a Docker Network to run the services within:
+
+`docker network create <my-network>`
+
+ex: `docker network create cloud-config-network`
+
+
+#### 3.2 Use the 'docker compose' command
+
 `docker compose -f <file.yml> up`
 
 ex: `docker compose -f cloud-config-server.yml up`
@@ -60,7 +69,7 @@ where:
 {application}: The name of the application (derived from the configuration file name).
 {profile}: The active profile (derived from the configuration file name).
 
-ex: `http://localhost:8888/springapp/default/`
+ex: `http://localhost:8888/spring-app-cloud/cloud/`
 
 Here you should see an JSON output similar to the following format:
 
@@ -81,7 +90,7 @@ where:
 {application}: The name of the application (derived from the configuration file name).
 {profile}: The active profile (derived from the configuration file name).
 
-ex: `curl http://localhost:8888/springapp/default/`
+ex: `curl http://localhost:8888/spring-app-cloud/cloud/`
 
 
 Here you should see an output similar to the one below based on your serivce setup:
