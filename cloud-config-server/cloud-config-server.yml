@@ -2,12 +2,14 @@ version: "3.9"  # Or a newer version if you have Docker Compose 2.0+ installed
 
 services:
   config-server:
+    container_name: cloud-config-server
+    hostname: cloud-config-server
     image: "cloud-config-server:0.0.1"  # Or a smaller JDK image like "eclipse-temurin:21-jre-alpine" if you only need the JRE
     ports:
       - "8888:8888"
-#     networks:
-#       - my-network # Create a network for inter-service communication
+    networks:
+      - cloud-config-network # Create a network for inter-service communication
 
-# networks:
-#   my-network:
-#     driver: bridge
+networks:
+  cloud-config-network:
+    external: true
