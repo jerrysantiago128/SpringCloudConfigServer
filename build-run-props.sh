@@ -1,10 +1,15 @@
 #!/bin/bash
 
 # remove application.properties file and move '.env' file to current directory
-cp config/application.properties src/main/resources/application.properties
+cp config/application.properties test-app/src/main/resources/application.properties
+
+cd test-app/ 
 
 # build the source code 
 mvn clean package
+
+
+cd ../
 
 # build the docker image
 docker build -t spring-app:props-config .
