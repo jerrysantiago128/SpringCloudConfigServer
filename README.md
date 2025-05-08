@@ -37,12 +37,16 @@ Verify installation and add java to your ~/.bashrc file if needed
 
 ### 1. Build Source Code
 
+`cd test-app`
+
 If you are using an `application.properties` file to set any configuration values, make sure the file exists in the `src/main/resources/` folder with the `application.yml` file.
 
 - `mvn clean package`
 
 
 ### 2. Build the Docker Image
+
+`cd ../`
 
 - `docker build -t <image-name:tag> .`
 
@@ -109,9 +113,18 @@ source .env && docker run -p 8080:8080 -e MESSAGE="Hello from .env file" \
 
 - ex: `docker run -p 8080:8080 spring-app:cloud-config`
 
-
+ls
 ###### Run via Docker Compose
 
 - `docker compose -f <compose-file.yml> up`
 
 - ex: `docker compose -f spring-app-cloud.yml up`
+
+# To Configure with Spring Cloud Config Server
+
+Reference the link below to Spin up a Spring Cloud Config Server and Client
+
+
+https://docs.spring.io/spring-cloud-config/docs/current/reference/html/#_quick_start
+
+Build and Configure the Server in the `test-config-server/` directory
