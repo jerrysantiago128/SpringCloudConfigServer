@@ -73,7 +73,9 @@ Since we have three different configurations being used, we can run each service
 
 - ex: 
 ```
-sl    -e  NAME=Domingo              \
+source .env && docker run -p 8080:8080 -e MESSAGE="Hello from .env file" \
+    -e  ENVIRONMENT="The Islands" \
+    -e  NAME=Domingo              \
     -e ROLE=Senor                 \
     spring-app:env-config
     
