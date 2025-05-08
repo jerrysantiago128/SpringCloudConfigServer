@@ -8,7 +8,7 @@ VOLUME /tmp
 WORKDIR /app
 
 # Copy built jar into image
-COPY target/demo-0.0.1-SNAPSHOT.jar app.jar
+COPY target/demo-0.0.1.jar app.jar
 
 # Run the app
 ENTRYPOINT ["java","-jar","/app/app.jar"]
