@@ -61,7 +61,7 @@ Since we have three different configurations being used, we can containerize eac
 - ex: `docker build -t spring-app:cloud-config .`
 
 
-### Run the Service
+## Run the Service
 
 Since we have three different configurations being used, we can run each service with a different configuation process.
 
@@ -69,10 +69,15 @@ Since we have three different configurations being used, we can run each service
 #### Running Service with ".env" file for configuration
 ##### Run via CLI
 
-- `source .env && docker run -p 8080:8080 <image-name:tag>`
+- `source .env && docker run -p 8080:8080 -e VALUE1=VAR ... <image-name:tag>`
 
-- ex: `source .env && docker run -p 8080:8080 spring-app:env-config`
-
+- ex: 
+```
+sl    -e  NAME=Domingo              \
+    -e ROLE=Senor                 \
+    spring-app:env-config
+    
+```
 
 ###### Run via Docker Compose
 
