@@ -1,1 +1,2 @@
-/test-app/target/
+test-app/target/
+cloud-config-server/target/
