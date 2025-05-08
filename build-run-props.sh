@@ -16,7 +16,7 @@ docker build -t spring-app:props-config .
 
 # start the app with 'docker run'
 
-docker run -p 8080:8080 spring-app:props-config
+docker run -p 8080:8080 --name spring-app-props spring-app:props-config
 
 # OR start the app with 'docker compose'
 

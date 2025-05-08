@@ -14,8 +14,8 @@ docker build -t spring-app:cloud-config .
 
 # start the app with 'docker run'
 
-docker run -p 8080:8080 spring-app:cloud-config
+#docker run -p 8080:8080  --name spring-app-cloud spring-app:cloud-config
 
 # OR start the app with 'docker compose'
 
-#docker compose -f spring-app-cloud.yml up
+docker compose -f spring-app-cloud.yml up
