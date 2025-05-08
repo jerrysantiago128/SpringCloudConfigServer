@@ -69,12 +69,29 @@ where:
 {application}: The name of the application (derived from the configuration file name).
 {profile}: The active profile (derived from the configuration file name).
 
-ex: `http://localhost:8888/spring-app-cloud/cloud/`
+ex: `http://cloud-config-server:8888/spring-app-cloud/cloud/`
 
 Here you should see an JSON output similar to the following format:
 
 ```
-$SAMPLE OUTPUT$
+name	"spring-app-cloud"
+profiles	
+0	"cloud"
+label	null
+version	null
+state	null
+propertySources	
+0	
+name	"classpath:/config/spring-app-cloud-cloud.properties"
+source	
+message	'"Hello from the Config Server (Properties)!"'
+environment	'"Cloud Production"'
+name	"Rico"
+role	"Practioner"
+1	
+name	"classpath:/config/application.properties"
+source	
+default.message	"Hello from the default config!"
 ```
 
 ### Via CLI using 'curl'
@@ -90,11 +107,18 @@ where:
 {application}: The name of the application (derived from the configuration file name).
 {profile}: The active profile (derived from the configuration file name).
 
-ex: `curl http://localhost:8888/spring-app-cloud/cloud/`
+ex: `curl http://cloud-config-server:8888/spring-app-cloud/cloud/`
 
+You may need to grab the ip address of the container with the following command(s):
+
+` docker network inspect <network-name>`
+
+ex: ` docker network inspect cloud-config-network`
+
+And grab ip address of your container/service
 
 Here you should see an output similar to the one below based on your serivce setup:
 
 ```
-$SAMPLE OUTPUT$
+{"name":"spring-app-cloud","profiles":["cloud"],"label":null,"version":null,"state":null,"propertySources":[{"name":"classpath:/config/spring-app-cloud-cloud.properties","source":{"message":"\"Hello from the Config Server (Properties)!\"","environment":"\"Cloud Production\"","name":"Rico","role":"Practioner"}},{"name":"classpath:/config/application.properties","source":{"default.message":"Hello from the default config!"}}]}
 ```
