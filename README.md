@@ -66,7 +66,7 @@ Since we have three different configurations being used, we can containerize eac
 Since we have three different configurations being used, we can run each service with a different configuation process.
 
 
-#### Running Service with ".env" file for configuration
+#### Running Service with ".env" file for configuration **DOES NOT WORK AS INTENDED BUT WORKS AS LISTED BELOW**
 ##### Run via CLI
 
 - `source .env && docker run -p 8080:8080 -e VALUE1=VAR ... <image-name:tag>`
@@ -98,9 +98,9 @@ source .env && docker run -p 8080:8080 -e MESSAGE="Hello from .env file" \
 
 ###### Run via Docker Compose
 
-- `source .env && docker compose -f <compose-file.yml> up`
+- `docker compose -f <compose-file.yml> up`
 
-- ex: `source .env && docker compose -f spring-app-props.yml up`
+- ex: `docker compose -f spring-app-props.yml up`
 
 
 #### Running Service with "application.properties" file for external configuration
