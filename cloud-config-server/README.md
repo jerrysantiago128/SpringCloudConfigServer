@@ -64,35 +64,34 @@ Open your browser of choice and navigate to:
 
 where: 
 
-{config-server-host}: The hostname or IP address of your Config Server.
-{config-server-port}: The port the Config Server is listening on.
-{application}: The name of the application (derived from the configuration file name).
-{profile}: The active profile (derived from the configuration file name).
+    {config-server-host}: The hostname or IP address of your Config Server.
+    {config-server-port}: The port the Config Server is listening on.
+    {application}: The name of the application (derived from the configuration file name).
+    {profile}: The active profile (derived from the configuration file name).
 
 ex: `http://cloud-config-server:8888/spring-app-cloud/cloud/`
 
 Here you should see an JSON output similar to the following format:
 
-```
-name	"spring-app-cloud"
-profiles	
-0	"cloud"
-label	null
-version	null
-state	null
-propertySources	
-0	
-name	"classpath:/config/spring-app-cloud-cloud.properties"
-source	
-message	'"Hello from the Config Server (Properties)!"'
-environment	'"Cloud Production"'
-name	"Rico"
-role	"Practioner"
-1	
-name	"classpath:/config/application.properties"
-source	
-default.message	"Hello from the default config!"
-```
+    name	"spring-app-cloud"
+    profiles	
+    0	"cloud"
+    label	null
+    version	null
+    state	null
+    propertySources	
+    0	
+    name	"classpath:/config/spring-app-cloud-cloud.properties"
+    source	
+    message	'"Hello from the Config Server (Properties)!"'
+    environment	'"Cloud Production"'
+    name	"Rico"
+    role	"Practioner"
+    1	
+    name	"classpath:/config/application.properties"
+    source	
+    default.message	"Hello from the default config!"
+
 
 ### Via CLI using 'curl'
 
@@ -102,10 +101,10 @@ From your terminal run the curl command below
 
 where: 
 
-{config-server-host}: The hostname or IP address of your Config Server.
-{config-server-port}: The port the Config Server is listening on.
-{application}: The name of the application (derived from the configuration file name).
-{profile}: The active profile (derived from the configuration file name).
+    {config-server-host}: The hostname or IP address of your Config Server.
+    {config-server-port}: The port the Config Server is listening on.
+    {application}: The name of the application (derived from the configuration file name).
+    {profile}: The active profile (derived from the configuration file name).
 
 ex: `curl http://cloud-config-server:8888/spring-app-cloud/cloud/`
 
@@ -119,6 +118,6 @@ And grab ip address of your container/service
 
 Here you should see an output similar to the one below based on your serivce setup:
 
-```
-{"name":"spring-app-cloud","profiles":["cloud"],"label":null,"version":null,"state":null,"propertySources":[{"name":"classpath:/config/spring-app-cloud-cloud.properties","source":{"message":"\"Hello from the Config Server (Properties)!\"","environment":"\"Cloud Production\"","name":"Rico","role":"Practioner"}},{"name":"classpath:/config/application.properties","source":{"default.message":"Hello from the default config!"}}]}
-```
+
+    {"name":"spring-app-cloud","profiles":["cloud"],"label":null,"version":null,"state":null,"propertySources":[{"name":"classpath:/config/spring-app-cloud-cloud.properties","source":{"message":"\"Hello from the Config Server (Properties)!\"","environment":"\"Cloud Production\"","name":"Rico","role":"Practioner"}},{"name":"classpath:/config/application.properties","source":{"default.message":"Hello from the default config!"}}]}
+

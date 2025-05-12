@@ -76,14 +76,14 @@ Since we have three different configurations being used, we can run each service
 - `source .env && docker run -p 8080:8080 -e VALUE1=VAR ... <image-name:tag>`
 
 - ex: 
-```
-source .env && docker run -p 8080:8080 -e MESSAGE="Hello from .env file" \
-    -e  ENVIRONMENT="The Islands" \
-    -e  NAME=Domingo              \
-    -e ROLE=Senor                 \
-    spring-app:env-config
+
+    source .env && docker run -p 8080:8080 -e MESSAGE="Hello from .env file" \
+      -e  ENVIRONMENT="The Islands" \
+      -e  NAME=Domingo \
+      -e ROLE=Senor \
+      spring-app:env-config
     
-```
+
 
 ###### Run via Docker Compose
 
@@ -128,13 +128,13 @@ Open your browser of choice and navigate to `http://localhost:8080/app/config/`
 
 Here you should see an output similar to the following format:
 
-```
-Message: Overridden message from application.properties
-Environment: from properties
-Beta Enabled: false
-User: admin
-Role: ADMIN
-```
+
+    Message: Overridden message from application.properties
+    Environment: from properties
+    Beta Enabled: false
+    User: admin
+    Role: ADMIN
+
 
 ### Via CLI using 'curl'
 
@@ -146,9 +146,9 @@ From your terminal run the curl command below
 
 Here you should see an output similar to the one below based on your serivce setup:
 
-```
-Message: Overridden message from application.properties<br>Environment: from properties<br>Beta Enabled: false<br>User: admin<br>Role: ADMIN
-```
+
+    Message: Overridden message from application.properties<br>Environment: from properties<br>Beta Enabled: false<br>User: admin<br>Role: ADMIN
+
 
 
 # To Configure with Spring Cloud Config Server
