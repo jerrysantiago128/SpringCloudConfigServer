@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  springboot-app:
+    container_name: test-app-profile2
+    hostname: test-app-profile2
+    image: test-app:profile2
+    ports:
+      - "8082:8082"
+    restart: always
+    networks:
+      - cloud-config-network # Create a network for inter-service communication
+
+
+networks:
+  cloud-config-network:
+    external: true
+

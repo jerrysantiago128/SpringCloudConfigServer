@@ -2,6 +2,7 @@
 
 # remove application.properties file and move '.env' file to current directory
 cp config/test-app-profile1.properties test-app/src/main/resources/application.properties
+cp config/test-app-profile1-application.yml test-app/src/main/resources/application.yml
 
 cd test-app/
 
@@ -14,9 +15,9 @@ docker build -t test-app:profile1 .
 
 # start the app with 'docker run'
 
-docker run -p 8081:8081  --name test-app-profile1 test-app:profile1
+#docker run -p 8081:8081  --name test-app-profile1 test-app:profile1
 
 # OR start the app with 'docker compose'
 
-#docker compose -f spring-app-cloud.yml up
+docker compose -f test-app-profile1.yml up
 
