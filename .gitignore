@@ -1,3 +1,4 @@
 test-app/target/
+secure-test-app/target/
 cloud-config-server/target/
 secure-config-server/target/
