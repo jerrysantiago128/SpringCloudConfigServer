@@ -2,7 +2,6 @@
 
 # remove application.properties file and move '.env' file to current directory
 cp ../config/test-app-profile3.properties ../test-app/src/main/resources/application.properties
-cp ../config/test-app-profile3-application.yml ../test-app/src/main/resources/application.yml
 
 cd ../test-app/
 
