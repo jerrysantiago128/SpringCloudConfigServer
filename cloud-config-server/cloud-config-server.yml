@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  springboot-app:
+    container_name: cloud-config-server
+    hostname: cloud-config-server
+    image: cloud-config-server:0.0.1
+    ports:
+      - "8888:8888"
+    networks:
+      - cloud-config-network
+    restart: always
+
+networks:
+  cloud-config-network:
+    external: true
