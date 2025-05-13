@@ -89,7 +89,7 @@ Since we have three different configurations being used, we can run each service
 
 - `source .env && docker compose -f <compose-file.yml> up`
 
-- ex: `source .env && docker compose -f spring-app-env.yml up`
+- ex: `source .env && docker compose -f compose/spring-app-env.yml up`
 
 
 #### Running Service with "application.properties" file for configuration
@@ -104,7 +104,7 @@ Since we have three different configurations being used, we can run each service
 
 - `docker compose -f <compose-file.yml> up`
 
-- ex: `docker compose -f spring-app-props.yml up`
+- ex: `docker compose -f compose/spring-app-props.yml up`
 
 
 #### Running Service with "application.properties" file for external configuration
@@ -118,13 +118,13 @@ Since we have three different configurations being used, we can run each service
 
 - `docker compose -f <compose-file.yml> up`
 
-- ex: `docker compose -f spring-app-cloud.yml up`
+- ex: `docker compose -f compose/spring-app-cloud.yml up`
 
 ## Accessing the Service
 
 ### 1. Via Browser
 
-Open your browser of choice and navigate to `http://localhost:8080/app/config/`
+Open your browser of choice and navigate to `http://container-ip:service-port/app/config/`
 
 Here you should see an output similar to the following format:
 
