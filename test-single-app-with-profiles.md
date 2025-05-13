@@ -34,6 +34,10 @@ It will the rebuild the Spring Boot Project with maven, create a Docker containe
 
 These service(s) will fail if the Spring Cloud Config Server is not running.
 
+**NOTE**: Only one instance of this application will run at a time. Overwritting the profile for the application will overwrite the service that runs.
+
+- So running `build-run-cloud-profile1.sh` will start the "test-app-profile1" but running `build-run-cloud-profile2.sh` will stop the previous service, and start a new service with "test-app-profile2".
+
 ## Verifying Success of Configuration
 
 There are a few ways to determine if your configuration attempt has worked. A few ways are listed below:
