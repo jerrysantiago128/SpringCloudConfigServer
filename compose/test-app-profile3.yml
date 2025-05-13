@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  springboot-app:
+    container_name: test-app-profile2
+    hostname: test-app-profile2
+    image: test-app:profile3
+    ports:
+      - "8080:8080"
+    networks:
+      - cloud-config-network
+    restart: always
+
+networks:
+  cloud-config-network:
+    external: true
