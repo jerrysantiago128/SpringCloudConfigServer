@@ -1,0 +1,11 @@
+server:
+  port: 8080
+
+app:
+  message: ${message}
+  environment: ${environment}
+  feature-toggle:
+    enableBeta: true
+  user:
+    name: ${name}
+    role: ${role}

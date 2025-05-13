@@ -1,0 +1,15 @@
+server:
+  port: 8888  # Default port for the Config Server
+
+spring:
+  application:
+    name: config-server # Optional, but good practice
+  cloud:
+    config:
+      server:
+        native:
+          search-locations: classpath:/config  # Tells the server to look in the 'config' directory under 'resources'
+      enabled: true #Ensures the config client is enabled
+  profiles:
+    active: native #Activates native profile for local filesystem based config
+
