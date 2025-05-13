@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  springboot-app:
+    container_name: spring-app-cloud
+    hostname: spring-app-cloud
+    image: spring-app:cloud-config
+    ports:
+      - "8080:8080"
+    restart: always
+    networks:
+      - cloud-config-network # Create a network for inter-service communication
+
+
+networks:
+  cloud-config-network:
+    external: true
+
