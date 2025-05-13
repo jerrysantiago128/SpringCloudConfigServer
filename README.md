@@ -76,20 +76,20 @@ Since we have three different configurations being used, we can run each service
 - `source .env && docker run -p 8080:8080 -e VALUE1=VAR ... <image-name:tag>`
 
 - ex: 
-```
-source .env && docker run -p 8080:8080 -e MESSAGE="Hello from .env file" \
-    -e  ENVIRONMENT="The Islands" \
-    -e  NAME=Domingo              \
-    -e ROLE=Senor                 \
-    spring-app:env-config
+
+    source .env && docker run -p 8080:8080 -e MESSAGE="Hello from .env file" \
+      -e  ENVIRONMENT="The Islands" \
+      -e  NAME=Domingo \
+      -e ROLE=Senor \
+      spring-app:env-config
     
-```
+
 
 ###### Run via Docker Compose
 
 - `source .env && docker compose -f <compose-file.yml> up`
 
-- ex: `source .env && docker compose -f spring-app-env.yml up`
+- ex: `source .env && docker compose -f compose/spring-app-env.yml up`
 
 
 #### Running Service with "application.properties" file for configuration
@@ -104,7 +104,7 @@ source .env && docker run -p 8080:8080 -e MESSAGE="Hello from .env file" \
 
 - `docker compose -f <compose-file.yml> up`
 
-- ex: `docker compose -f spring-app-props.yml up`
+- ex: `docker compose -f compose/spring-app-props.yml up`
 
 
 #### Running Service with "application.properties" file for external configuration
@@ -113,12 +113,43 @@ source .env && docker run -p 8080:8080 -e MESSAGE="Hello from .env file" \
 
 - ex: `docker run -p 8080:8080 spring-app:cloud-config`
 
-ls
+
 ###### Run via Docker Compose
 
 - `docker compose -f <compose-file.yml> up`
 
-- ex: `docker compose -f spring-app-cloud.yml up`
+- ex: `docker compose -f compose/spring-app-cloud.yml up`
+
+## Accessing the Service
+
+### 1. Via Browser
+
+Open your browser of choice and navigate to `http://container-ip:service-port/app/config/`
+
+Here you should see an output similar to the following format:
+
+
+    Message: Overridden message from application.properties
+    Environment: from properties
+    Beta Enabled: false
+    User: admin
+    Role: ADMIN
+
+
+### Via CLI using 'curl'
+
+From your terminal run the curl command below
+
+`curl http://ip:port/path/to/resource`
+
+`curl http://localhost:8080/app/config`
+
+Here you should see an output similar to the one below based on your serivce setup:
+
+
+    Message: Overridden message from application.properties<br>Environment: from properties<br>Beta Enabled: false<br>User: admin<br>Role: ADMIN
+
+
 
 # To Configure with Spring Cloud Config Server
 
@@ -127,4 +158,6 @@ Reference the link below to Spin up a Spring Cloud Config Server and Client
 
 https://docs.spring.io/spring-cloud-config/docs/current/reference/html/#_quick_start
 
-Build and Configure the Server in the `test-config-server/` directory
+Build and Configure the Server in the `cloud-config-server/` directory
+
+There is a README.md file in the `cloud-config-server/` directory with notes on building and running the Cloud Server as a service.

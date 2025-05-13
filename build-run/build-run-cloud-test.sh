@@ -1,9 +1,9 @@
 #!/bin/bash
 
 # remove application.properties file and move '.env' file to current directory
-cp config/cloud-config.properties test-app/src/main/resources/application.properties
+cp ../config/cloud-config.properties test-app/src/main/resources/application.properties
 
-cd test-app/
+cd ../test-app/
 
 # build the source code 
 mvn clean package
@@ -14,8 +14,9 @@ docker build -t spring-app:cloud-config .
 
 # start the app with 'docker run'
 
-docker run -p 8080:8080 spring-app:cloud-config
+#docker run -p 8080:8080  --name spring-app-cloud spring-app:cloud-config
 
 # OR start the app with 'docker compose'
+cd compose/
 
-#docker compose -f spring-app-cloud.yml up
+docker compose -f spring-app-cloud.yml up
