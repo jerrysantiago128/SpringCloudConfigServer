@@ -75,7 +75,7 @@ Since we have three different configurations being used, we can run each service
 
 
 #### Running Service with ".env" file for configuration 
-        **NEED TO REVISIT THIS IMPLEMENTATION**
+        **NEED TO REVISIT THIS IMPLEMENTATION BELOW**
 ##### Run via CLI
 
     source .env && docker run -p 8080:8080 -e VALUE1=VAR ... <image-name:tag>
