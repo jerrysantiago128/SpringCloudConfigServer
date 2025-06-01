@@ -8,10 +8,10 @@ Simple implementation of an external configuration server for SpringBoot applica
 
 #### Remove old Docker and/or Podman installations
 
-sudo yum remove docker docker-client \ 
-    docker-client-latest docker-common \ 
-    docker-latest docker-latest-logrotate \ 
-    docker-logrotate docker-engine podman runc
+    sudo yum remove docker docker-client \ 
+      docker-client-latest docker-common \ 
+      docker-latest docker-latest-logrotate \ 
+      docker-logrotate docker-engine podman runc
 
 #### Grab the Docker '.repo' file
 
@@ -74,18 +74,19 @@ Since we have three different configurations being used, we can containerize eac
 Since we have three different configurations being used, we can run each service with a different configuation process.
 
 
-#### Running Service with ".env" file for configuration **DOES NOT WORK AS INTENDED BUT WORKS AS LISTED BELOW**
+#### Running Service with ".env" file for configuration 
+        **NEED TO REVISIT THIS IMPLEMENTATION**
 ##### Run via CLI
 
     source .env && docker run -p 8080:8080 -e VALUE1=VAR ... <image-name:tag>
 
 - ex: 
 
-    source .env && docker run -p 8080:8080 -e MESSAGE="Hello from .env file" \ 
-      -e  ENVIRONMENT="The Islands" \ 
-      -e  NAME=Domingo \ 
-      -e ROLE=Senor \ 
-      spring-app:env-config
+        source .env && docker run -p 8080:8080 -e MESSAGE="Hello from .env file" \ 
+          -e  ENVIRONMENT="The Islands" \ 
+          -e  NAME=Domingo \ 
+          -e ROLE=Senor \ 
+          spring-app:env-config
     
 
 
@@ -128,7 +129,9 @@ Since we have three different configurations being used, we can run each service
 
 ### 1. Via Browser
 
-Open your browser of choice and navigate to `http://container-ip:service-port/app/config/`
+Open your browser of choice and navigate to: 
+
+    http://container-ip:service-port/app/config/
 
 Here you should see an output similar to the following format:
 
