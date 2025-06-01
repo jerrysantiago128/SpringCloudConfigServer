@@ -4,15 +4,15 @@ The details listed below describe the WHAT, WHY AND HOW both the Server and Clie
 
 Traditional Spring Configuration Goals:
     
-    externalized --> property files
-    
-    environment specifc --> spring profiles
-    
-    consistent --> none; configuration changes on one service/microservice only affects that service, not the entire set of services
-    
-    version history --> none; every new deployment and configuration is "unique"
-    
-    real time management --> none; have to rebuild the jar and restart the service in order to deploy the new configuration
+1) Externalized --> property files
+
+2) Environment Specifc --> spring profiles
+
+3) Consistent --> none; configuration changes on one service/microservice only affects that service, not the entire set of services
+
+4) Version History --> none; every new deployment and configuration is "unique"
+
+5) Real Time Management --> none; have to rebuild the jar and restart the service in order to deploy the new configuration
 
 To solve these issues we can use a Spring Cloud Config Server:
 
