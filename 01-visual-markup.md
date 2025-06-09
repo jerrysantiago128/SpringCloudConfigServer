@@ -8,7 +8,7 @@ graph LR
       C3[app3profile.properties]
       C4[app4profile.properties]
     end
-    subgraph Certificates
+    subgraph Server Certificates
       SRVCRT[server.crt]
       SRVKEY[server.key]
     end
@@ -31,7 +31,7 @@ graph LR
       AY4[application.yml]
       AP4[application.properties]
     end
-    subgraph Certificates
+    subgraph Client Certificates
       CLICRT[server.crt]
       CLIKEY[server.key]
     end
