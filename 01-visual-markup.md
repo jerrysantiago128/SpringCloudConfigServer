@@ -8,6 +8,10 @@ graph LR
       C3[app3profile.properties]
       C4[app4profile.properties]
     end
+    subgraph Certificates
+      SRVCRT[server.crt]
+      SRVKEY[server.key]
+    end
   end
 
   subgraph External Applications
@@ -27,10 +31,21 @@ graph LR
       AY4[application.yml]
       AP4[application.properties]
     end
+    subgraph Certificates
+      CLICRT[server.crt]
+      CLIKEY[server.key]
+    end
   end
 
+  subgraph Mounted Path
+    CRT[server.crt]
+    KEY[server.key]
+  end
 
 C1 <--> AP1 <--> AY1
 C2 <--> AP2 <--> AY2
 C3 <--> AP3 <--> AY3
 C4 <--> AP4 <--> AY4
+
+SRVCRT <--> CRT <--> CLICERT
+SRVKEY <--> KEY <--> CLICKEY
