@@ -3,10 +3,10 @@
 graph LR 
   subgraph ConfigServer
     subgraph ConfigFolder
-      C1 [app1-profile.properties]
-      C2 [app2-profile.properties]
-      C3 [app3-profile.properties]
-      C4 [app4-profile.properties]
+      C1 [app1profile.properties]
+      C2 [app2profile.properties]
+      C3 [app3profile.properties]
+      C4 [app4profile.properties]
     end
   end
 
