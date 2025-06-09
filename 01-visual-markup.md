@@ -47,5 +47,5 @@ C2 <--> AP2 <--> AY2
 C3 <--> AP3 <--> AY3
 C4 <--> AP4 <--> AY4
 
-SRVCRT <--> CRT <--> CLICERT
-SRVKEY <--> KEY <--> CLICKEY
+SRVCRT <--> CRT <--> CLICRT
+SRVKEY <--> KEY <--> CLIKEY
