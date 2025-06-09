@@ -15,15 +15,15 @@ graph LR
       AY1[application.yml]
       AP1[application.properties]
     end
-    subgraph Application 1
+    subgraph Application 2
       AY2[application.yml]
       AP2[application.properties]
     end
-    subgraph Application 1
+    subgraph Application 3
       AY3[application.yml]
       AP3[application.properties]
     end
-    subgraph Application 1
+    subgraph Application 4
       AY4[application.yml]
       AP4[application.properties]
     end
