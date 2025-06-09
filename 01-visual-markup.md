@@ -27,6 +27,7 @@ graph LR
       AY4[application.yml]
       AP4[application.properties]
     end
+  end
 
 
 C1 <--> AP1 <--> AY1
