@@ -5,8 +5,6 @@ graph LR
     subgraph ConfigFolder
       C1[app1profile.properties]
       C2[app2profile.properties]
-      C3[app3profile.properties]
-      C4[app4profile.properties]
     end
     subgraph Server Certificates
       SRVCRT[server.crt]
@@ -22,14 +20,6 @@ graph LR
     subgraph Application 2
       AY2[application.yml]
       AP2[application.properties]
-    end
-    subgraph Application 3
-      AY3[application.yml]
-      AP3[application.properties]
-    end
-    subgraph Application 4
-      AY4[application.yml]
-      AP4[application.properties]
     end
     subgraph Client Certificates
       CLICRT[server.crt]
