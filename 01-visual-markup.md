@@ -2,6 +2,10 @@
 
 graph LR 
   subgraph ConfigServer
+    subgraph ConfigServerSource
+      SRC[application.yml]
+      PR[application.properties]
+    end
     subgraph ConfigFolder
       C1[app1profile.properties]
       C2[app2profile.properties]
@@ -32,8 +36,8 @@ graph LR
     KEY[server.key]
   end
 
-C1 <--> AP1 <--> AY1
-C2 <--> AP2 <--> AY2
+C1 <-HTTPS-> AP1 <--> AY1
+C2 <-HTTPS-> AP2 <--> AY2
 
 SRVCRT <--> CRT <--> CLICRT
 SRVKEY <--> KEY <--> CLIKEY
