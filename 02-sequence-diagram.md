@@ -14,7 +14,7 @@ sequenceDiagram
   SRV ->> CLICFG: Do you have the proper certificate(s)?
   CLICFG ->> SRV: Yes, here it is
   SRV ->> CLICFG: Good. Now what do you need?
-  CLICFG ->> SRV I need configurations for my 'application'.
+  CLICFG ->> SRV: I need configurations for my 'application'.
   SRV ->> SRVCFG: Do you have a configuration resource for 'application'?
   SRVCFG ->> SRV: Yes, here it is
   SRV ->> CLICFG: Here is you configuration(s).
