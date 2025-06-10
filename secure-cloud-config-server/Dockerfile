@@ -1,5 +1,5 @@
 # Start from official Java image
-FROM openjdk:17-jdk-slim
+FROM registry1.dso.mil/ironbank/redhat/openjdk/openjdk17-slim:1.17
 
 # Add a volume to hold the app
 VOLUME /tmp

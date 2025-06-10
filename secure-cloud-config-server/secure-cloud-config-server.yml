@@ -6,7 +6,7 @@ services:
     hostname: secure-cloud-config-server
     image: secure-cloud-config-server:0.0.1
     ports:
-      - "8888:8888"
+      - "8443:8443"
     networks:
       - cloud-config-network
     restart: always

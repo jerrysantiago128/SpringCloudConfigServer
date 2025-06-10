@@ -1,14 +1,20 @@
 server:
-  port: 8888  # Default port for the Config Server
-
+  port: 8443  # Default port for the Config Server
+  ssl:
+    enabled: true
+    key-store-type: PKCS12
+    key-store: classpath:configserver.p12
+    key-store-password: password
+    key-alias: configserver
 spring:
   application:
-    name: secure-config-server # Optional, but good practice
+    name: secure-cloud-config-server # Optional, but good practice
   cloud:
     config:
       server:
         native:
           search-locations: classpath:/config  # Tells the server to look in the 'config' directory under 'resources'
       enabled: true #Ensures the config client is enabled
+
   profiles:
     active: native #Activates native profile for local filesystem based config
