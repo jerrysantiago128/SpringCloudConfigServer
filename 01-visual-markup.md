@@ -36,8 +36,8 @@ graph LR
     KEY[server.key]
   end
 
-C1 <-HTTPS-> AP1 <--> AY1
-C2 <-HTTPS-> AP2 <--> AY2
+C1 <-- "HTTPS" --> AP1 <--> AY1
+C2 <-- "HTTPS" --> AP2 <--> AY2
 
 SRVCRT <--> CRT <--> CLICRT
 SRVKEY <--> KEY <--> CLIKEY
