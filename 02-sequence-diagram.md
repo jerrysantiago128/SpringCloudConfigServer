@@ -11,19 +11,19 @@ sequenceDiagram
   
   create participant SRV as Cloud Config Server
   CLICFG ->> SRV: 3. Request for Configuration Values
-  SRV <<->> CLICFG: TLS Handshake
+  SRV <<->> CLICFG: 4. TLS Handshake
   
   create participant SRVCFG as Cloud Config Server Config Files
-  SRV ->> SRVCFG: 4. Request for Configuration Values
+  SRV ->> SRVCFG: 5. Request for Configuration Values
   destroy SRVCFG
   
-  SRVCFG ->> SRV: 5. Response with Configuration Values
+  SRVCFG ->> SRV: 6. Response with Configuration Values
   destroy SRV
-  SRV ->> CLICFG: 6. Response with Configuration Values
+  SRV ->> CLICFG: 7. Response with Configuration Values
   
   destroy CLICFG
-  CLICFG ->> CLISRC: 7. Response with Configuration Values
-  CLISRC <<-->> USR: 8. User Defined Interaction(s)
+  CLICFG ->> CLISRC: 8. Response with Configuration Values
+  CLISRC <<-->> USR: 9. User Defined Interaction(s)
   
 
 
