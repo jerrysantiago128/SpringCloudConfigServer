@@ -21,6 +21,7 @@ sequenceDiagram
   SRV ->> CLICFG: Response with Configuration Values
   destroy CLICFG
   CLICFG ->> CLISRC: Response with Configuration Values
+  CLISRC <<-->> CLISRC: User Defined Interaction(s)
   
 
 
