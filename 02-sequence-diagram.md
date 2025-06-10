@@ -1,12 +1,10 @@
 ```mermaid
 
 sequenceDiagram
+  participant CLISRC as Client Source
+  participant CLICFG as Client Server Connection
   participant SRV as Cloud Config Server
   participant SRVCFG as Cloud Config Server Config Files
-  participant CFG as Client Configurations
-  participant CLICFG as Client Server Connection
-  participant CLISRC as Client Source
-
 
   CLISRC ->> CLICFG: Do you have my configuration values?
   CLICFG ->> CLISRC: Let me grab them from the Server
