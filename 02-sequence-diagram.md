@@ -1,7 +1,10 @@
 ```mermaid
 
 sequenceDiagram
-  participant CLISRC as Client Source
+
+  participant USR as End User
+  create participant CLISRC as Client Service
+  USR ->> CLISRC: Starting Client Service
   create participant CLICFG as Client Server Connection
   CLISRC ->> CLICFG: Request for Configuration Values
 
