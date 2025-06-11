@@ -3,8 +3,7 @@
 graph LR 
   subgraph ConfigServer
     subgraph ConfigServerSource
-      SRC[application.yml]
-      PR[application.properties]
+      SRC[application.yml &/OR application.properties]
     end
     subgraph ConfigFolder
       C1[app1profile.properties]
