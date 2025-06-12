@@ -1,0 +1,11 @@
+server:
+  port: 8080
+
+app:
+  message: "Hello Plaintext User, from the Secure Config Server (Service)!"
+  environment: "Cloud Config"
+  feature-toggle:
+    enableBeta: true
+  user:
+    name: "John Doe"
+    role: Plaintext Client
