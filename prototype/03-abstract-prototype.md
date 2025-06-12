@@ -3,7 +3,7 @@
 graph LR 
   subgraph ConfigServer
     subgraph ConfigServerSource
-      SRC1[application.yml &/OR application.properties]
+      SRC1[application.yml]
       SRC2[src/main/java/]
     end
     subgraph ConfigFolder
@@ -18,11 +18,11 @@ graph LR
 
   subgraph External Applications
     subgraph Application 1
-      AY1[application.yml OR application.properties]
+      AY1[application.yml]
       CLI1[src/main/java/]
     end
     subgraph Application 2
-      AY2[application.yml OR application.properties]
+      AY2[application.yml]
       CLI2[src/main/java/]
     end
     subgraph Client Certificates
