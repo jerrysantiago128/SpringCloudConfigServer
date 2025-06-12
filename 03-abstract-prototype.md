@@ -19,9 +19,11 @@ graph LR
   subgraph External Applications
     subgraph Application 1
       AY1[application.yml OR application.properties]
+      CLI1[src/main/java/]
     end
     subgraph Application 2
       AY2[application.yml OR application.properties]
+      CLI2[src/main/java/]
     end
     subgraph Client Certificates
       CLICRT[server.crt]
